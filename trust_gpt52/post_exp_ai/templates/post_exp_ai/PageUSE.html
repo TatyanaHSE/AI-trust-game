@@ -1,0 +1,29 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include "post_exp_ai/ProgressBar.html" %}
+
+<p style="font-style: italic;">Response scale: 1–10</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+How often do you use AI tools (e.g., ChatGPT or similar) in your daily life?
+</p>
+{{ formfield 'use_1' }}
+<p style="font-style: italic;">1 = never; 10 = very often</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+How skilled do you consider yourself at using AI tools effectively?
+</p>
+{{ formfield 'use_2' }}
+<p style="font-style: italic;">1 = not skilled at all; 10 = very skilled</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+Overall, how useful have AI tools been for you when you have used them?
+</p>
+{{ formfield 'use_3' }}
+<p style="font-style: italic;">1 = not useful at all; 10 = extremely useful</p>
+
+{{ next_button }}
+{% endblock %}

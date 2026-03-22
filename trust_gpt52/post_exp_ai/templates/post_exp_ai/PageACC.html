@@ -1,0 +1,29 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include "post_exp_ai/ProgressBar.html" %}
+
+<p style="font-style: italic;">Response scale: 1–10</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+When an AI gives an answer, I generally assume it is correct.
+</p>
+{{ formfield 'acc_1' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+AI advice is reliable in tasks that require strategic reasoning (not just factual knowledge).
+</p>
+{{ formfield 'acc_2' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+In general, I consider AI-generated recommendations to be trustworthy.
+</p>
+{{ formfield 'acc_3' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+{{ next_button }}
+{% endblock %}

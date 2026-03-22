@@ -1,0 +1,59 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <div class="d-flex justify-content-between mb-2">
+        <div><strong>Progress:</strong> {{ progress_current }} / {{ progress_total }}</div>
+        <div>{{ progress_percent }}%</div>
+    </div>
+    <div class="progress" style="height: 14px;">
+        <div class="progress-bar" role="progressbar" style="width: {{ progress_percent }}%;"></div>
+    </div>
+</div>
+
+
+
+<p>
+Before the main part of the experiment, please answer a few short questions about yourself.
+This information will be used only for research purposes.
+</p>
+
+{{ formfield 'age' }}
+{{ formfield 'gender' }}
+{{ formfield 'education' }}
+
+<div style="margin-top:20px;">
+{{ formfield 'ai_familiarity' }}
+<p style="font-size:14px;color:#666;">
+where 1 = very low / not at all, and 10 = very high / completely.
+</p>
+</div>
+
+<div style="margin-top:20px;">
+{{ formfield 'general_trust' }}
+<p style="font-size:14px;color:#666;">
+where 1 = very low / not at all, and 10 = very high / completely.
+</p>
+</div>
+
+<div style="margin-top:20px;">
+{{ formfield 'risk_attitude' }}
+<p style="font-size:14px;color:#666;">
+where 1 = very low / not at all, and 10 = very high / completely.
+</p>
+</div>
+
+<div style="margin-top:20px;">
+{{ formfield 'life_satisfaction' }}
+<p style="font-size:14px;color:#666;">
+where 1 = very low / not at all, and 10 = very high / completely.
+</p>
+</div>
+
+{{ next_button }}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include "post_exp_ai/ProgressBar.html" %}
+
+<p style="font-style: italic;">Response scale: 1–10</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+I feel confident in my ability to predict how an AI will behave in an economic game.
+</p>
+{{ formfield 'mm_1' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+If you play the same game once with a human and once with an AI, whose behavior do you find easier to predict?
+</p>
+{{ formfield 'mm_2' }}
+<p style="font-style: italic;">1 = much easier to predict the human; 10 = much easier to predict the AI</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+Compared to a typical human, I expect an AI to behave more rationally in economic games.
+</p>
+{{ formfield 'mm_3' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+Compared to a typical human, I expect an AI to behave more fairly in economic games.
+</p>
+{{ formfield 'mm_4' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+Compared to a typical human, I expect an AI to behave more strategically in economic games.
+</p>
+{{ formfield 'mm_5' }}
+<p style="font-style: italic;">1 = strongly disagree; 10 = strongly agree</p>
+
+{{ next_button }}
+{% endblock %}

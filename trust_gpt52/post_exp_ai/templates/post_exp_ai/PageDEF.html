@@ -1,0 +1,29 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include "post_exp_ai/ProgressBar.html" %}
+
+<p style="font-style: italic;">Response scale: 1–10</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+How willing are you to change your initial decision after receiving advice from an AI?
+</p>
+{{ formfield 'def_1' }}
+<p style="font-style: italic;">1 = not willing at all; 10 = very willing</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+If the AI’s recommendation conflicts with your intuition, how likely are you to follow the AI anyway?
+</p>
+{{ formfield 'def_2' }}
+<p style="font-style: italic;">1 = not willing at all; 10 = very willing</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+In a strategic decision task, how likely would you be to rely on AI advice?
+</p>
+{{ formfield 'def_3' }}
+<p style="font-style: italic;">1 = very unlikely; 10 = very likely</p>
+
+{{ next_button }}
+{% endblock %}

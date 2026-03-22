@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+Payment Information
+{% endblock %}
+
+{% block content %}
+
+<p>Please enter your email address for payment.</p>
+
+{{ formfield 'email' }}
+
+{{ next_button }}
+
+{% endblock %}

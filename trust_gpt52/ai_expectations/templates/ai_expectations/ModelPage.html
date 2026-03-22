@@ -1,0 +1,115 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <div class="d-flex justify-content-between mb-2">
+        <div><strong>Progress:</strong> 3 / 10</div>
+        <div>30%</div>
+    </div>
+    <div class="progress" style="height: 14px;">
+        <div class="progress-bar" role="progressbar" style="width: 30%;"></div>
+    </div>
+</div>
+
+<p class="lead mb-4">
+    Below are several Trust Game scenarios. For each one, please indicate what decision you believe <strong>{{ model_name }}</strong> would make.
+</p>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>1. Imagine that {{ model_name }} is assigned the role of Player A.</strong> Player A receives <strong>$1000</strong> and may send any amount from <strong>$0 to $1000</strong> to Player B. We played this game independently 1000 times with the same AI system. How much do you think the AI would send on average?</p>
+        <input class="form-range" type="range" name="send" min="0" max="1000" step="1" value="0" oninput="setValue('send_value', this.value); touched.send = true; updateReady();">
+        <div class="d-flex justify-content-between text-muted small">
+            <span>0</span><span>500</span><span>1000</span>
+        </div>
+        <p class="mt-2 mb-0">Selected: <strong id="send_value">—</strong></p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>2. Player A sent $10.</strong> After tripling, Player B received <strong>$30</strong>. We played this game independently 1000 times with the same AI system. How much do you think the AI would return on average?</p>
+        <input class="form-range" type="range" name="r10" min="0" max="30" step="1" value="0" oninput="setValue('r10_value', this.value); touched.r10 = true; updateReady();">
+        <div class="d-flex justify-content-between text-muted small">
+            <span>0</span><span>15</span><span>30</span>
+        </div>
+        <p class="mt-2 mb-0">Selected: <strong id="r10_value">—</strong></p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>3. Player A sent $250.</strong> After tripling, Player B received <strong>$750</strong>. We played this game independently 1000 times with the same AI system. How much do you think the AI would return on average?</p>
+        <input class="form-range" type="range" name="r250" min="0" max="750" step="1" value="0" oninput="setValue('r250_value', this.value); touched.r250 = true; updateReady();">
+        <div class="d-flex justify-content-between text-muted small">
+            <span>0</span><span>375</span><span>750</span>
+        </div>
+        <p class="mt-2 mb-0">Selected: <strong id="r250_value">—</strong></p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>4. Player A sent $500.</strong> After tripling, Player B received <strong>$1500</strong>. We played this game independently 1000 times with the same AI system. How much do you think the AI would return on average?</p>
+        <input class="form-range" type="range" name="r500" min="0" max="1500" step="1" value="0" oninput="setValue('r500_value', this.value); touched.r500 = true; updateReady();">
+        <div class="d-flex justify-content-between text-muted small">
+            <span>0</span><span>750</span><span>1500</span>
+        </div>
+        <p class="mt-2 mb-0">Selected: <strong id="r500_value">—</strong></p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>5. Player A sent $750.</strong> After tripling, Player B received <strong>$2250</strong>. We played this game independently 1000 times with the same AI system. How much do you think the AI would return on average?</p>
+        <input class="form-range" type="range" name="r750" min="0" max="2250" step="1" value="0" oninput="setValue('r750_value', this.value); touched.r750 = true; updateReady();">
+        <div class="d-flex justify-content-between text-muted small">
+            <span>0</span><span>1125</span><span>2250</span>
+        </div>
+        <p class="mt-2 mb-0">Selected: <strong id="r750_value">—</strong></p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>6. Player A sent $1000.</strong> After tripling, Player B received <strong>$3000</strong>. We played this game independently 1000 times with the same AI system. How much do you think the AI would return on average?</p>
+        <input class="form-range" type="range" name="r1000" min="0" max="3000" step="1" value="0" oninput="setValue('r1000_value', this.value); touched.r1000 = true; updateReady();">
+        <div class="d-flex justify-content-between text-muted small">
+            <span>0</span><span>1500</span><span>3000</span>
+        </div>
+        <p class="mt-2 mb-0">Selected: <strong id="r1000_value">—</strong></p>
+    </div>
+</div>
+
+<script>
+const touched = {
+    send: false,
+    r10: false,
+    r250: false,
+    r500: false,
+    r750: false,
+    r1000: false
+};
+
+function setValue(id, value) {
+    document.getElementById(id).textContent = value;
+}
+
+function updateReady() {
+    const btn = document.querySelector('button[type="submit"], .otree-btn-next');
+    if (!btn) return;
+    btn.disabled = !Object.values(touched).every(Boolean);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    updateReady();
+});
+</script>
+
+{{ next_button }}
+
+{% endblock %}

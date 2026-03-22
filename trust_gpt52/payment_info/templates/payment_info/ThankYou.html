@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+Thank You
+{% endblock %}
+
+{% block content %}
+
+<p>Thank you for participating in the experiment.</p>
+
+<p><strong>Selected model:</strong> {{ chosen_model }}</p>
+<p><strong>Randomly selected question:</strong> {{ chosen_question }}</p>
+<p><strong>Prediction error:</strong> {{ prediction_error }}</p>
+<p><strong>Bonus:</strong> ${{ bonus }}</p>
+<p><strong>Total payment:</strong> ${{ total_payment }}</p>
+
+<hr>
+
+<p><strong>Debug player.payoff:</strong> {{ payoff_debug }}</p>
+<p><strong>Debug participant.payoff:</strong> {{ participant_payoff_debug }}</p>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="mb-4">
+    <div class="d-flex justify-content-between mb-2">
+        <div><strong>Progress:</strong> {{ progress_current }} / {{ progress_total }}</div>
+        <div>{{ progress_percent }}%</div>
+    </div>
+    <div class="progress" style="height: 14px;">
+        <div class="progress-bar" role="progressbar" style="width: {{ progress_percent }}%;"></div>
+    </div>
+</div>
+
+
+
+<h3>About this study</h3>
+
+<p>
+In this study, you will be asked to predict how an artificial intelligence system behaves in an economic decision-making situation.
+</p>
+
+<p>
+You will estimate the decisions made by <b>an AI model</b> in a series of scenarios based on a well-known economic task called the <b>Trust Game</b>.
+</p>
+
+<hr>
+
+<h3>The Trust Game</h3>
+
+<div style="background:#f8f9fb;padding:20px;border-radius:8px;margin-bottom:20px">
+
+<p><b>Player A</b> receives an initial endowment of <b>$1000</b>.</p>
+
+<p>Player A may send any amount between <b>$0 and $1000</b> to Player B.</p>
+
+<p>The amount sent is <b>tripled</b>.</p>
+
+<p><b>Player B</b> then decides how much of the received amount to return to Player A.</p>
+
+</div>
+
+<div style="text-align:center;margin:30px 0;font-size:18px">
+
+<b>Player A</b> → sends money → <b>Player B</b>  
+<br><br>
+sent amount × <b>3</b>
+
+</div>
+
+<div style="background:#eef2ff;padding:20px;border-radius:8px">
+
+<b>Example</b>
+
+<ul>
+<li>Player A sends <b>$100</b></li>
+<li>Player B receives <b>$300</b></li>
+<li>Player B decides how much to return</li>
+</ul>
+
+</div>
+
+<p style="margin-top:20px">
+There is <b>no correct or incorrect answer</b> in this game. Different players may behave differently depending on their preferences.
+</p>
+
+<hr>
+
+<h3>Your task</h3>
+
+<p>
+You will see several situations in which the AI model makes a decision in the Trust Game.
+</p>
+
+<p>
+For each situation, indicate <b>what decision you believe the AI model would make</b>.
+</p>
+
+<p>
+Use the <b>slider</b> to choose an amount.
+</p>
+
+<hr>
+
+<h3>Bonus payment</h3>
+
+<div style="background:#fff3cd;padding:20px;border-radius:8px;border:1px solid #ffeeba">
+
+<p>
+At the end of the study, <b>one of your predictions will be randomly selected</b>.
+</p>
+
+<p>
+If your prediction is <b>within 5% of the actual decision made by the AI model</b>, you will receive a <b>$1 bonus</b>.
+</p>
+
+</div>
+
+<hr>
+
+<h3>Important</h3>
+
+<p>
+Please answer the questions based on your <b>intuition and expectations</b> about how AI systems behave.
+</p>
+
+<p>
+All responses are <b>anonymous</b> and will be used only for research purposes.
+</p>
+
+<br>
+
+{{ next_button }}
+
+{% endblock %}

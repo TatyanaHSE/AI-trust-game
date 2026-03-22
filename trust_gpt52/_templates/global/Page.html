@@ -1,0 +1,21 @@
+{% extends "otree/Page.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    {% if progress_current and progress_total %}
+    <div class="mb-4">
+        <div class="d-flex justify-content-between mb-2">
+            <div><strong>Progress:</strong> {{ progress_current }} / {{ progress_total }}</div>
+            <div>{{ progress_percent }}%</div>
+        </div>
+        <div class="progress" style="height: 14px;">
+            <div class="progress-bar" role="progressbar" style="width: {{ progress_percent }}%;"></div>
+        </div>
+    </div>
+    {% endif %}
+
+    {{ block.super }}
+
+</div>
+{% endblock %}

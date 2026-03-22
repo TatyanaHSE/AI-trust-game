@@ -1,0 +1,11 @@
+{% if progress_current and progress_total and progress_percent %}
+<div style="margin-bottom: 12px;">
+  <div style="display:flex; justify-content:space-between; font-size: 14px; margin-bottom: 6px;">
+    <span>Progress: <b>{{ progress_current }}</b> / <b>{{ progress_total }}</b></span>
+    <span>{{ progress_percent }}%</span>
+  </div>
+  <div style="background:#e9ecef; border-radius: 10px; height: 12px; overflow: hidden;">
+    <div style="width: {{ progress_percent }}%; height: 12px; background:#0d6efd;"></div>
+  </div>
+</div>
+{% endif %}

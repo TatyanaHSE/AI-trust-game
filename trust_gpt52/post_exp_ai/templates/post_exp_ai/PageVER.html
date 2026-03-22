@@ -1,0 +1,29 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include "post_exp_ai/ProgressBar.html" %}
+
+<p style="font-style: italic;">Response scale: 1–10</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+How often do you verify an AI answer using another source?
+</p>
+{{ formfield 'ver_1' }}
+<p style="font-style: italic;">1 = never; 10 = always</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+When an AI gives a confident-sounding answer, how often do you skip verification because it “sounds right”?
+</p>
+{{ formfield 'ver_2' }}
+<p style="font-style: italic;">1 = never skip verification; 10 = always skip verification</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+How skeptical are you, in general, about AI-generated answers?
+</p>
+{{ formfield 'ver_3' }}
+<p style="font-style: italic;">1 = not skeptical at all; 10 = very skeptical</p>
+
+{{ next_button }}
+{% endblock %}

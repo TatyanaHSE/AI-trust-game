@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+GPT-5.2 (ChatGPT)
+{% endblock %}
+
+{% block content %}
+
+<div class="progress-wrap">
+    <div class="progress-top">
+        <div><strong>Progress:</strong> {{ current }} / {{ total }}</div>
+        <div>{{ percent }}%</div>
+    </div>
+    <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width: {{ percent }}%;"></div>
+    </div>
+</div>
+
+<div class="survey-intro">
+    Below are several Trust Game scenarios. For each one, please indicate what decision you believe <strong>GPT-5.2</strong> would make.
+</div>
+
+<div class="question-card">
+    <div class="question-title">
+        1. Imagine that GPT-5.2 is assigned the role of <strong>Player A</strong>. Player A receives <strong>$1000</strong> and may send any amount from <strong>$0 to $1000</strong> to Player B. How much do you think GPT-5.2 would send?
+    </div>
+    <div class="slider-wrap">
+        <input class="pretty-slider" type="range" name="gpt_send" min="0" max="1000" step="1" value="0" oninput="markTouched(this, 'gpt_send_value')">
+        <div class="scale-row"><span>0</span><span>500</span><span>1000</span></div>
+        <div class="slider-value">Selected: <span id="gpt_send_value">—</span></div>
+    </div>
+</div>
+
+<div class="question-card">
+    <div class="question-title">
+        2. Player A sent <strong>$10</strong>. After tripling, Player B received <strong>$30</strong>. How much do you think GPT-5.2 would return to Player A?
+    </div>
+    <div class="slider-wrap">
+        <input class="pretty-slider" type="range" name="gpt_r10" min="0" max="30" step="1" value="0" oninput="markTouched(this, 'gpt_r10_value')">
+        <div class="scale-row"><span>0</span><span>15</span><span>30</span></div>
+        <div class="slider-value">Selected: <span id="gpt_r10_value">—</span></div>
+    </div>
+</div>
+
+<div class="question-card">
+    <div class="question-title">
+        3. Player A sent <strong>$250</strong>. After tripling, Player B received <strong>$750</strong>. How much do you think GPT-5.2 would return to Player A?
+    </div>
+    <div class="slider-wrap">
+        <input class="pretty-slider" type="range" name="gpt_r250" min="0" max="750" step="1" value="0" oninput="markTouched(this, 'gpt_r250_value')">
+        <div class="scale-row"><span>0</span><span>375</span><span>750</span></div>
+        <div class="slider-value">Selected: <span id="gpt_r250_value">—</span></div>
+    </div>
+</div>
+
+<div class="question-card">
+    <div class="question-title">
+        4. Player A sent <strong>$500</strong>. After tripling, Player B received <strong>$1500</strong>. How much do you think GPT-5.2 would return to Player A?
+    </div>
+    <div class="slider-wrap">
+        <input class="pretty-slider" type="range" name="gpt_r500" min="0" max="1500" step="1" value="0" oninput="markTouched(this, 'gpt_r500_value')">
+        <div class="scale-row"><span>0</span><span>750</span><span>1500</span></div>
+        <div class="slider-value">Selected: <span id="gpt_r500_value">—</span></div>
+    </div>
+</div>
+
+<div class="question-card">
+    <div class="question-title">
+        5. Player A sent <strong>$750</strong>. After tripling, Player B received <strong>$2250</strong>. How much do you think GPT-5.2 would return to Player A?
+    </div>
+    <div class="slider-wrap">
+        <input class="pretty-slider" type="range" name="gpt_r750" min="0" max="2250" step="1" value="0" oninput="markTouched(this, 'gpt_r750_value')">
+        <div class="scale-row"><span>0</span><span>1125</span><span>2250</span></div>
+        <div class="slider-value">Selected: <span id="gpt_r750_value">—</span></div>
+    </div>
+</div>
+
+<div class="question-card">
+    <div class="question-title">
+        6. Player A sent <strong>$1000</strong>. After tripling, Player B received <strong>$3000</strong>. How much do you think GPT-5.2 would return to Player A?
+    </div>
+    <div class="slider-wrap">
+        <input class="pretty-slider" type="range" name="gpt_r1000" min="0" max="3000" step="1" value="0" oninput="markTouched(this, 'gpt_r1000_value')">
+        <div class="scale-row"><span>0</span><span>1500</span><span>3000</span></div>
+        <div class="slider-value">Selected: <span id="gpt_r1000_value">—</span></div>
+    </div>
+</div>
+
+<script>
+    enforceAllSlidersTouched('form');
+</script>
+
+{{ next_button }}
+
+{% endblock %}

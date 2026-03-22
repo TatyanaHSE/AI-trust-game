@@ -1,0 +1,17 @@
+{% extends "otree/Page.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include "post_exp_ai/ProgressBar.html" %}
+
+<p style="font-style: italic;">Response scale: 1 = strongly disagree, 10 = strongly agree</p>
+
+<p style="font-size: 20px; margin-top: 24px;">
+To confirm you are paying attention, please select number <strong>7</strong>.
+</p>
+
+{{ formfield 'attn_1' }}
+
+{{ next_button }}
+{% endblock %}
